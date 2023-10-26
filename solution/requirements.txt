@@ -2,3 +2,6 @@ jsonschema
 numpy
 pandas
 sklearn
+uvicorn[standard]
+fastapi
+pydantic

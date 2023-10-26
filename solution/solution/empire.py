@@ -3,17 +3,17 @@ from solution.schemas import empire_schema
 import json
 
 class Empire:
-  def __init__(self, filePath:str):
-    try:
-      with open(filePath, 'r') as file:
-        data = json.load(file)
-    except FileNotFoundError as e:
-       print('did not find empire file - e')
-       raise e
-    except json.JSONDecodeError as e:
-      print('json error')
-      raise e
-
+  def __init__(self, filePath:str, data=None):
+    if data is None:
+      try:
+        with open(filePath, 'r') as file:
+          data = json.load(file)
+      except FileNotFoundError as e:
+        print('did not find empire file - e')
+        raise e
+      except json.JSONDecodeError as e:
+        print('json error')
+        raise e
     validate(instance=data, schema=empire_schema)
     self.time_limit = data['countdown']
 

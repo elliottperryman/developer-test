@@ -25,7 +25,6 @@ empire_schema = {
     "required": ["countdown", "bounty_hunters"]
 }
 
-
 falcon_schema = {
     "type": "object",
     "properties": {
