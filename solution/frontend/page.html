@@ -66,3 +66,27 @@
     </div>
 </body>
 </html>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('submitBtn').addEventListener('click', function() {
+            
+            var jsonData = document.getElementById('jsonInput').value;
+
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: JSON.parse(jsonData) })
+            })
+            .then(response => response.json())
+            .then(data => {
+              
+                document.getElementById('responseText').innerText = "Success Probability: " + data.odds + "%";
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
