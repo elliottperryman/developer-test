@@ -7,6 +7,7 @@
  * fix setup.py with details
  * write frontend
  * write readme
+ * form for json
 
 
 python3 -m venv env

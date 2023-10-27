@@ -1,3 +1,6 @@
+# These schemas are used for validating json data correctness.
+# All code should use these so that changes are minimized
+
 empire_schema = {
     "type": "object",
     "properties": {

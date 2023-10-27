@@ -3,10 +3,18 @@ from solution.empire import Empire
 from solution.falcon import MillenniumFalcon
 
 def calc_prob(n):
+  # convert number of encounters to probability
   if n == 0: return 100
   return round(100*(1 - (0.1 + sum((0.9)**k/10 for k in range(1,n)))))
 
 def solve(villains:Empire, heroes:MillenniumFalcon, verbose=False):
+  """
+  This is a depth first search with the following states:
+    time: cannot go longer than the deadline of the empire
+    location: should be moving to the destination 
+    encounters: how many encounters with bounty hunters have there been
+    fuel_leval: what is the current fuel range of the falcon
+    """
   solns = []
   best_val = [-1]
 
