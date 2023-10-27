@@ -14,8 +14,32 @@ At first I thought that this problem was a sort of tricky problem. I thought abo
 
 ## How to run:
 Clone the repo:
-```python
-https://github.com/elliottperryman/developer-test
+```bash
+git clone https://github.com/elliottperryman/developer-test
+```
+
+make a local environment (I assume your python 3 is called python3)
+```bash
+cd solution
+python3 -m venv env
+source env/bin/activate
+```
+
+Update pip and install
+```bash
+pip install -U pip
+pip install -r requirements.txt
+pip install .
+```
+
+Now you can run the CLI like so (assuming your json file locations are right):
+```bash
+give-me-the-odds examples/example1/empire.json examples/example1/millennium-falcon.json
+```
+
+And the frontend runs with (assuming you are in developer-test/solution):
+```bash
+uvicorn frontend.main:app
 ```
 
 ## Things to do:
