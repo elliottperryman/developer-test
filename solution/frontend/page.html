@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Millennium Falcon Odds</title>
+    <style>
+        body {
+            background: #000 url('background.jpg') no-repeat center top;
+            background-size: cover;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+        }
+        
+        #jsonInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        
+        #submitBtn {
+            background: #ffe81f;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        
+        #response {
+            margin-top: 20px;
+            border: 2px solid #ffe81f;
+            padding: 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        #responseText {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Millennium Falcon Odds</h1>
+        
+        <textarea id="jsonInput" rows="10" placeholder="Enter JSON data here"></textarea>
+        <button id="submitBtn">Calculate Odds</button>
+        
+        <div id="response">
+            <h2>Success Probability:</h2>
+            <p id="responseText">-</p>
+        </div>
+    </div>
+</body>
+</html>
