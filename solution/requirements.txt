@@ -5,3 +5,4 @@ sklearn
 uvicorn[standard]
 fastapi
 pydantic
+loguru
