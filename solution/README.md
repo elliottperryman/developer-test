@@ -14,3 +14,5 @@ source env/bin/activate
 pip install -U pip
 pip install -r requirements.txt
 pip install .
+run frontend
+uvicorn frontend.main:app --reload
