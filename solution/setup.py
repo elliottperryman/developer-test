@@ -4,14 +4,14 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name="giskardSolution",  # Replace with your library name
-    version="0.1.0",  # Update the version
-    description="A simple Python library",
+    name="giskardSolution",  
+    version="1.0",  # Update the version
+    description="(attempted) Solution of Giskard Developer Task",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Your Name",
-    author_email="your@email.com",
-    url="https://github.com/yourusername/mylibrary",
+    author="Elliott Perryman",
+    author_email="elliott.perryman@hey.com",
+    url="https://github.com/elliottperryman/developer-test",
     packages=['solution'], #find_packages(),
     install_requires=[],
     classifiers=[
