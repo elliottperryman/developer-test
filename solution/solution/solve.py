@@ -3,9 +3,9 @@ from solution.empire import Empire
 from solution.falcon import MillenniumFalcon
 
 def calc_prob(n):
-  # convert number of encounters to probability
   if n == 0: return 100
-  return round(100*(1 - (0.1 + sum((0.9)**k/10 for k in range(1,n)))))
+  if n == 1: return 90
+  return round(100*(1- (0.1 + 0.09 * (1 - 0.9**(n-1)) / (1 - 0.9))))
 
 def solve(villains:Empire, heroes:MillenniumFalcon, verbose=False):
   """
