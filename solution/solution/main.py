@@ -1,8 +1,12 @@
 #!env/bin/python
 import sys
-from solution.solve import solve
-from solution.empire import Empire
-from solution.falcon import MillenniumFalcon
+# from solution.solve import solve
+# from solution.empire import Empire
+# from solution.falcon import MillenniumFalcon
+
+from solve import solve
+from empire import Empire
+from falcon import MillenniumFalcon
 
 def main():
     """
@@ -14,4 +18,5 @@ def main():
         print(solve(Empire(sys.argv[1]), MillenniumFalcon(sys.argv[2])))
 
 if __name__=='__main__':
+    sys.argv = ['', '../../examples/example4/empire.json', '../../examples/example4/millennium-falcon.json']
     main()

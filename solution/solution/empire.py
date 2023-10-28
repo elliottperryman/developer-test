@@ -1,5 +1,7 @@
 from jsonschema import validate
-from solution.schemas import empire_schema
+# from solution.schemas import empire_schema
+from schemas import empire_schema
+
 import json
 
 class Empire:

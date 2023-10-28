@@ -2,7 +2,8 @@ import json, sqlite3, os
 from jsonschema import validate
 import pandas as pd
 import numpy as np
-from solution.schemas import falcon_schema
+# from solution.schemas import falcon_schema
+from schemas import falcon_schema
 
 class MillenniumFalcon:
   """
