@@ -1,6 +1,6 @@
 # Elliott Perryman
 ## Solution Approach:
-At first I thought that this problem was a sort of tricky problem. I thought about the algorithm solution and thought that there should be some sort of Dykstra or A* shortest path or some kind of dynamic programming solution. When I thought about it more, I thought that the dynamic programming solution does not quite work here because of the bounty hunters. We have to compare pretty much every path to the endpoint, as some longer paths can have higher success probability. So, in the end, I just did a simple depth first search through the paths. 
+I did not understand there was a dynamic programming solution at first. It took me a bit to think about how I should think of the problem. I implemented a depth first search of the paths and used this to generate many more test cases. Then I implemented a dynamic programming solution that has time complexity $ \mathbb{O}(T * P * B * |E| ) $, where T is the time limit, P is the number of planets, B is the number of bounty hunters, and |E| is the number of edges. This solution is much faster. 
 
 ## Design Choices
  * I use python: I could rewrite it in C, but this would be a decent amount of time for not a huge payoff
