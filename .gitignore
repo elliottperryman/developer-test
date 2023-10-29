@@ -1,3 +1,4 @@
 solution/env
 solution/giskardSolution.egg-info
 solution/build
+examples/**
