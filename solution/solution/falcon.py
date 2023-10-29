@@ -2,8 +2,8 @@ import json, sqlite3, os
 from jsonschema import validate
 import pandas as pd
 import numpy as np
-# from solution.schemas import falcon_schema
-from schemas import falcon_schema
+from loguru import logger
+from solution.schemas import falcon_schema
 
 class MillenniumFalcon:
   """
@@ -19,10 +19,10 @@ class MillenniumFalcon:
       with open(filePath, 'r') as file:
         data = json.load(file)
     except FileNotFoundError as e:
-       print('did not find empire file')
-       raise e
+      logger.error(f'Did not find falcon file - {e}')
+      raise e
     except json.JSONDecodeError as e:
-      print('json error')
+      logger.error(f'json decoder error - {e}')
       raise e
     # validate data
     validate(instance=data, schema=falcon_schema)

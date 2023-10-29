@@ -1,6 +1,6 @@
 from jsonschema import validate
-# from solution.schemas import empire_schema
-from schemas import empire_schema
+from loguru import logger
+from solution.schemas import empire_schema
 
 import json
 
@@ -19,10 +19,10 @@ class Empire:
         with open(filePath, 'r') as file:
           data = json.load(file)
       except FileNotFoundError as e:
-        print('did not find empire file - e')
+        logger.error(f'Did not find empire file - {e}')
         raise e
       except json.JSONDecodeError as e:
-        print('json error')
+        logger.error(f'json decoder error - {e}')
         raise e
     # need to validate json data
     validate(instance=data, schema=empire_schema)
