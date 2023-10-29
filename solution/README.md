@@ -20,7 +20,7 @@ git clone https://github.com/elliottperryman/developer-test
 
 make a local environment (I assume your python 3 is called python3)
 ```bash
-cd solution
+cd developer-test/solution
 python3 -m venv env
 source env/bin/activate
 ```
@@ -34,11 +34,13 @@ pip install .
 
 Now you can run the CLI like so (assuming your json file locations are right):
 ```bash
+cd ..
 give-me-the-odds examples/example1/empire.json examples/example1/millennium-falcon.json
 ```
 
 And the frontend runs with (assuming you are in developer-test/solution):
 ```bash
+cd solution
 uvicorn frontend.main:app
 ```
 
