@@ -1,6 +1,6 @@
 # Elliott Perryman
 ## Solution Approach:
-I did not understand there was a dynamic programming solution at first. It took me a bit to think about how I should think of the problem. I implemented a depth first search of the paths and used this to generate many more test cases. Then I implemented a dynamic programming solution that has time complexity $ O(T * P * B * |E| ) $, where T is the time limit, P is the number of planets, B is the number of bounty hunters, and |E| is the number of edges. This solution is much faster. 
+I did not understand there was a dynamic programming solution at first. It took me a bit to think about how I should think of the problem. I implemented a depth first search of the paths and used this to generate many more test cases. Then I implemented a dynamic programming solution that has time complexity O(T * P * B * |E|), where T is the time limit, P is the number of planets, B is the number of bounty hunters, and |E| is the number of edges. This solution is much faster. 
 
 ## Design Choices
  * I use python: I could rewrite it in C, but this would be a decent amount of time for not a huge payoff
