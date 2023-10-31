@@ -22,7 +22,7 @@
             text-transform: uppercase;
         }
         
-        #jsonInput {
+        #fileInput {
             width: 100%;
             padding: 10px;
             font-size: 16px;
@@ -56,7 +56,7 @@
     <div id="container">
         <h1>Millennium Falcon Odds</h1>
         
-        <textarea id="jsonInput" rows="10" placeholder="Enter JSON data here"></textarea>
+        <input type="file" id="fileInput" accept=".json" />
         <button id="submitBtn">Calculate Odds</button>
         
         <div id="response">
@@ -69,24 +69,32 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('submitBtn').addEventListener('click', function() {
+            var fileInput = document.getElementById('fileInput');
+            var file = fileInput.files[0];
             
-            var jsonData = document.getElementById('jsonInput').value;
-
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ data: JSON.parse(jsonData) })
-            })
-            .then(response => response.json())
-            .then(data => {
-              
-                document.getElementById('responseText').innerText = "Success Probability: " + data.odds + "%";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(event) {
+                    var jsonData = event.target.result;
+                    fetch('/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ data: JSON.parse(jsonData) })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('responseText').innerText = "Success Probability: " + data.odds + "%";
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                };
+                reader.readAsText(file);
+            } else {
+                alert('Please select a JSON file to upload.');
+            }
         });
     });
 </script>
